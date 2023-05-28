@@ -118,6 +118,7 @@ timer.style.color = "red";
     timer.style.display = "none";
     myButton.style.display = "block";
     finalResult.innerHTML = "Game is Over!, You lost!"
+    finalResult.style.color = "red";
     resultDisplay.innerHTML = "";
     
     }
@@ -128,7 +129,8 @@ timer.style.color = "red";
         timer.style.display = "none";
         myButton.style.display = "block"
         resultDisplay.innerHTML = "";
-        finalResult.innerHTML = "Game is over You won!";
+        finalResult.innerHTML = "Game is over! You won!";
+        finalResult.style.color = "green";
     }
     if(S === 0 && cScore === yScore){
         computerScore.innerHTML = cScore;
@@ -137,7 +139,8 @@ timer.style.color = "red";
         timer.style.display = "none";
         myButton.style.display = "block"
         resultDisplay.innerHTML = "";
-        finalResult.innerHTML = "Game is over It's a draw!"
+        finalResult.innerHTML = "Game is over It's a draw!";
+        finalResult.style.color = "grey";
     } 
     
          
