@@ -89,7 +89,7 @@ myButton.style.left = "50%";
 myButton.style.border = "none";
 myButton.style.padding = "10px";
 myButton.style.backgroundColor = "magenta";
-// myButton.style.display = "none";
+myButton.style.display = "none";
 myButton.style.cursor = "pointer";
 myButton.style.right = "50%";
 myButton.style.margin = "-10%";
@@ -106,12 +106,13 @@ timer.style.top = "170px";
 timer.style.left = "45%";
 timer.style.rigt = "50%";
 timer.style.color = "red";
-setInterval(() => {
+    setInterval(() => {
     let dist_1 = new Date("29 May, 2080 7:03:56").getTime();
     let dist_2 = new Date().getTime();
     let distance = dist_1 - dist_2;
     let S = Math.floor((distance % (1000*60))/(1000));
     timer.innerText = `Timer: ${S}`;
+
     if(S === 0 && cScore > yScore){
     button.style.display = "none";
     timer.style.display = "none";
@@ -137,9 +138,9 @@ setInterval(() => {
         myButton.style.display = "block"
         resultDisplay.innerHTML = "";
         finalResult.innerHTML = "Game is over It's a draw!"
-    }
+    } 
     
-    
+         
      
 }, 1000);
 
@@ -151,6 +152,8 @@ myButton.onclick = ()=>{
     timer.style.display = "block";
     myButton.style.display = "none";
     button.style.display = "block";
+    timer.innerText = `Timer: ${0}`;
+    
 }
 
 resultDisplay.style.position = "absolute";
