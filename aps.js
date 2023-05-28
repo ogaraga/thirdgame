@@ -44,6 +44,7 @@ container.append(title, yourScoreDisplay,computerScoreDisplay,resultDisplay);
                 userScore.innerHTML = yScore;
                 computerScore.innerHTML = cScore;
                 resultDisplay.innerText = `It's a tie!`;
+                resultDisplay.style.color = "grey";
                     break;
 
                 case "rockpaper":
@@ -53,6 +54,7 @@ container.append(title, yourScoreDisplay,computerScoreDisplay,resultDisplay);
                 yScore--;
                 computerScore.innerHTML = cScore;
                 resultDisplay.innerText = `You lose`;
+                resultDisplay.style.color = "red";
                     break;
                 
                 case "paperrock":
@@ -62,6 +64,7 @@ container.append(title, yourScoreDisplay,computerScoreDisplay,resultDisplay);
                 cScore--;
                 userScore.innerHTML = yScore;
                 resultDisplay.innerText = `You win`;
+                resultDisplay.style.color = "green";
                     break;
             };
 
