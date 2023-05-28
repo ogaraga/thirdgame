@@ -24,7 +24,7 @@ container.append(title, yourScoreDisplay,computerScoreDisplay,resultDisplay);
         button.style.position = "relative";
         button.style.left = "0";
         button.style.width = "70px";
-        button.style.top = "-20%";
+        button.style.top = "-25%";
         button.style.backgroundColor = "grey";
         button.style.color = "red";
         button.style.border = "none";
@@ -77,7 +77,7 @@ finalResult.innerHTML = `Final Outcome: `;
 finalResult.style.margin = "auto";
 finalResult.style.textAlign = "center"; 
 finalResult.style.position = "absolute";
-finalResult.style.bottom = "45px";
+finalResult.style.bottom = "40px";
 finalResult.style.color = "magenta";
 
 
@@ -85,25 +85,34 @@ const myButton = document.createElement("button");
 container.appendChild(myButton);
 myButton.innerHTML = "Resume";
 myButton.style.position = "absolute";
-myButton.style.bottom = "80px";
-myButton.style.left = "150px";
+myButton.style.left = "50%";
 myButton.style.border = "none";
-myButton.style.padding = "10px"
+myButton.style.padding = "10px";
 myButton.style.backgroundColor = "magenta";
-myButton.style.display = "none";
+// myButton.style.display = "none";
 myButton.style.cursor = "pointer";
+myButton.style.right = "50%";
+myButton.style.margin = "-10%";
+myButton.style.position = "absolute";
+myButton.style.top = "400px";
+myButton.style.width = "70px";
+myButton.style.height = "auto";
+myButton.style.textAlign = "center";
 
 const timer = document.createElement('h6');
 container.appendChild(timer);
 timer.style.position = "absolute";
-timer.style.top = "100px";
-timer.style.left = "150px";
+timer.style.top = "170px";
+timer.style.left = "45%";
+timer.style.rigt = "50%";
 timer.style.color = "red";
 setInterval(() => {
-    let distance = new Date().getTime();
-    let S = Math.floor((distance % (1000*70))/(1000));
+    let dist_1 = new Date("29 May, 2080 7:03:56").getTime();
+    let dist_2 = new Date().getTime();
+    let distance = dist_1 - dist_2;
+    let S = Math.floor((distance % (1000*60))/(1000));
     timer.innerText = `Timer: ${S}`;
-    if(S >= 65 && cScore > yScore){
+    if(S === 0 && cScore > yScore){
     button.style.display = "none";
     timer.style.display = "none";
     myButton.style.display = "block";
@@ -111,7 +120,7 @@ setInterval(() => {
     resultDisplay.innerHTML = "";
     
     }
-     if((S >= 65 && cScore < yScore)){
+     if((S === 0 && cScore < yScore)){
         computerScore.innerHTML = cScore;
         userScore.innerHTML = yScore;
         button.style.display = "none";
@@ -119,6 +128,15 @@ setInterval(() => {
         myButton.style.display = "block"
         resultDisplay.innerHTML = "";
         finalResult.innerHTML = "Game is over You won!";
+    }
+    if(S === 0 && cScore === yScore){
+        computerScore.innerHTML = cScore;
+        userScore.innerHTML = yScore;
+        button.style.display = "none";
+        timer.style.display = "none";
+        myButton.style.display = "block"
+        resultDisplay.innerHTML = "";
+        finalResult.innerHTML = "Game is over It's a draw!"
     }
     
     
@@ -143,53 +161,54 @@ resultDisplay.style.marginTop = "20px";
 
 container.appendChild(computerScore);
 computerScore.style.color = "red";
-computerScore.innerHTML = cScore
-computerScore.style.float = "right";
+computerScore.innerHTML = cScore;
+computerScore.style.top = "105px";
 computerScore.style.position = "absolute";
-computerScore.style.right = "26%";
-computerScore.style.marginTop = "85px";
+computerScore.style.right = "35%";
+computerScore.style.marginTop = "130px";
 
 container.appendChild(userScore);
 userScore.style.color = "red";
-userScore.style.float = "right";
-userScore.innerHTML = "0";
+userScore.style.top = "105px";
+userScore.innerHTML = yScore;
 userScore.style.position = "absolute";
-userScore.style.left = "15%";
-userScore.style.marginTop = "85px";
+userScore.style.left = "30%";
+userScore.style.marginTop = "130px";
 
 
 computerScoreDisplay.innerHTML = "Computer ScoreBoard : ";
-computerScoreDisplay.style.marginRight = "80px";
-computerScoreDisplay.style.float = "right";
+computerScoreDisplay.style.marginLeft = "80px";
 computerScoreDisplay.style.fontSize = "18px";
-computerScoreDisplay.style.marginTop = "20px";
+computerScoreDisplay.style.marginTop = "30px";
 computerScoreDisplay.style.position = "absolute";
-computerScoreDisplay.style.right = "-12%";
+computerScoreDisplay.style.left = "45%";
+computerScoreDisplay.style.top = "170px";
 
 
 yourScoreDisplay.innerHTML = "Your ScoreBoard : ";
-yourScoreDisplay.style.marginLeft = "10px";
-yourScoreDisplay.style.float = "left";
+yourScoreDisplay.style.marginTop = "30px";
 yourScoreDisplay.style.fontSize = "18px";
-yourScoreDisplay.style.marginTop = "25px";
+yourScoreDisplay.style.top = "170px";
 yourScoreDisplay.style.position = "absolute";
-yourScoreDisplay.style.right = "62%";
+yourScoreDisplay.style.right = "52%";
+computerScoreDisplay.style.marginLeft = "70px";
 
 title.style.textAlign = "center";
 title.style.fontSize = "20px";
-title.style.marginTop = "-40px";
+title.style.marginTop = "-20px";
 title.style.position = "absolute";
-title.style.top = "20%";
+title.style.top = "10%";
 title.style.color = "darkblue";
 title.innerHTML = "ROCK, PAPER & SCISSORS GAME";
 
 container.style.backgroundColor = "aqua";
-container.style.width = "80%";
-container.style.height = "50vh";
+container.style.width = "90%";
+container.style.height = "70vh";
 container.style.position = "relative";
-container.style.margin = "auto";
+container.style.margin = "50px auto";
 container.style.display = "flex";
 container.style.alignItems = "center";
 container.style.justifyContent = "center";
 container.style.flexDirection = "row";
+// container.style.padding = "20px";
 
